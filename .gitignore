@@ -1,7 +1,5 @@
 config.json
-
-// 没做完不上传
-# *mcsmbot*
+*.js
 
 # Logs
 logs
