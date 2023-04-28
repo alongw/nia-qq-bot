@@ -43,7 +43,7 @@ try {
 } catch (err) {
   // 未找到 创建配置文件 
   fs.writeFileSync('./config.json', configfile);
-  console.log('未找到配置文件，已自动创建config.js，请修改后重新运行');
+  console.log('未找到配置文件，已自动创建config.json，请修改后重新运行');
   process.exit(0);
 }
 const data = fs.readFileSync('./config.json', 'utf8');

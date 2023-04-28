@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "nia-qqbot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "app.js",
   "author": "alongw",
   "license": "MIT",
