@@ -16,9 +16,9 @@ onMessage((message) => {
 // 处理函数
 // 是群消息
 const isGroupMessage = (data: any) => {
-    // 获取群信息数据 group: { id: 856942056, name: 'log', permission: 'MEMBER' } permission是自己的权限
+    // 获取群信息数据 group: { id: 群号, name: 'log', permission: 'MEMBER' } permission是自己的权限
     const groupInfo = data.sender.group
-    // 获取发送者信息 {id: 1287756886,memberName: '阿龙小可爱',permission: 'OWNER',joinTimestamp: 1626426484,lastSpeakTimestamp: 1682662279,muteTimeRemaining: 0,group: {  }}
+    // 获取发送者信息 {id: 10001,memberName: 'QQ昵称',permission: 'OWNER',joinTimestamp: 1626426484,lastSpeakTimestamp: 1682662279,muteTimeRemaining: 0,group: {  }}
     const senderInfo = data.sender
     // 获取信息内容 [{ type: 'Source', id: 1702, time: 1682662757 },{ type: 'Plain', text: '66666' }]
     const messageData = data.messageChain
@@ -39,7 +39,7 @@ const isGroupMessage = (data: any) => {
 const isFriendMessage = (data: any) => {
     // 获取消息内容 [{ type: 'Source', id: 49786, time: 1682663073 },{ type: 'Plain', text: '22222333' }]
     const messageData = data.messageChain
-    // 获取发送者信息 { id: 1287756886, nickname: '阿龙小可爱', remark: '备注' }
+    // 获取发送者信息 { id: 10001, nickname: 'QQ昵称', remark: '备注' }
     const senderInfo = data.sender
     const cmd = isBotCommand(messageData[1].text, 999)
     if (cmd) {
