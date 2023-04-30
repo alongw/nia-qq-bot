@@ -1,6 +1,7 @@
 // message 用于处理消息内容
 
 import { onMessage, sendGroupMessage, sendFriendMessage } from './createMirai.js'
+import { getHelp } from './command/help.js'
 import useFn from './function.js'
 
 // 监听消息
@@ -23,6 +24,14 @@ const isGroupMessage = (data: any) => {
     // 获取信息内容 [{ type: 'Source', id: 1702, time: 1682662757 },{ type: 'Plain', text: '66666' }]
     const messageData = data.messageChain
 
+    // nia和/nia
+    if (messageData[1].text == 'nia') {
+        return sendTextMsg('group', groupInfo.id, 'nia')
+    }
+    if (messageData[1].text == '/nia') {
+        return getHelp(senderInfo, groupInfo)
+    }
+
     // 判断是否为命令 返回：false | -1 | { command: '命令', target: [ 'bbb', 'ccc', 'ddd' ] }
     const cmd = isBotCommand(messageData[1].text, 999)
     if (cmd) {
@@ -41,6 +50,15 @@ const isFriendMessage = (data: any) => {
     const messageData = data.messageChain
     // 获取发送者信息 { id: 10001, nickname: 'QQ昵称', remark: '备注' }
     const senderInfo = data.sender
+
+    // nia和/nia
+    if (messageData[1].text == 'nia') {
+        return sendTextMsg('friend', senderInfo.id, 'nia')
+    }
+    if (messageData[1].text == '/nia') {
+        return getHelp(senderInfo, undefined)
+    }
+
     const cmd = isBotCommand(messageData[1].text, 999)
     if (cmd) {
         // console.log(cmd);
