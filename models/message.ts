@@ -56,7 +56,7 @@ const isFriendMessage = (data: any) => {
 
     // nia和/nia
     if (senderInfo.id != config.qq) {
-        // 不能自己调用自己
+        // 不能自己调用自己 -- 我就说怎么一直风控:((((( 原来是nia了一晚上
         if (messageData[1].text == 'nia') {
             return sendTextMsg('friend', senderInfo.id, 'nia')
         }
