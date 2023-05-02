@@ -5,6 +5,7 @@
 // 导入模块
 import { start as startInstance, status as checkInstanceStatus } from './command/mcsm.js'
 import { getHelp } from './command/help.js'
+import { outNvZhuang } from './command/outNz.js'
 
 // 群信息数据 group: { id: 群号, name: 'log', permission: 'MEMBER' } permission是自己的权限
 // 发送者信息 {id: 10001,memberName: 'QQ昵称',permission: 'OWNER',joinTimestamp: 1626426484,lastSpeakTimestamp: 1682662279,muteTimeRemaining: 0,group: {  }}
@@ -26,6 +27,10 @@ const useFn = (cmd: any, senderInfo: any, groupInfo: any | null = null) => {
     if (command == 'status') {
         // 执行status
         checkInstanceStatus(senderInfo, groupInfo)
+    }
+    if (command == 'out') {
+        // 执行status
+        outNvZhuang(senderInfo, groupInfo)
     }
 }
 
