@@ -3,6 +3,9 @@
 import { onMessage, sendGroupMessage, sendFriendMessage } from './createMirai.js'
 import { getHelp } from './command/help.js'
 import useFn from './function.js'
+// 读取配置文件
+import configfile from './getconfig.js'
+const config = configfile as { [key: string]: any };
 
 // 监听消息
 onMessage((message) => {
@@ -52,11 +55,15 @@ const isFriendMessage = (data: any) => {
     const senderInfo = data.sender
 
     // nia和/nia
-    if (messageData[1].text == 'nia') {
-        return sendTextMsg('friend', senderInfo.id, 'nia')
-    }
-    if (messageData[1].text == '/nia') {
-        return getHelp(senderInfo, undefined)
+    if (senderInfo.id != config.qq) {
+        // 不能自己调用自己
+        if (messageData[1].text == 'nia') {
+            return sendTextMsg('friend', senderInfo.id, 'nia')
+        }
+        if (messageData[1].text == '/nia') {
+            return getHelp(senderInfo, undefined)
+        }
+
     }
 
     const cmd = isBotCommand(messageData[1].text, 999)
