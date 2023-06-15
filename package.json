@@ -1,8 +1,13 @@
 {
   "name": "nia-qq-bot",
   "version": "2.0.0",
-  "main": "app.ts",
+  "main": "src/app.ts",
   "repository": "https://github.com/liyxinia/nia-qq-bot.git",
   "author": "alongw <alongw@alongw.cn>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  }
 }
