@@ -6,7 +6,6 @@ import type configType from 'types/configType'
 
 const getConfigFn = (): configType => {
   try {
-    logger.info('正在读取配置文件')
     const configFileData = yaml.parse(
       fs.readFileSync('./config.yaml', 'utf-8')
     ) as configType

@@ -14,6 +14,7 @@ const getFileError = () => {
 let configFileData: configType = null
 // 尝试获取配置文件
 try {
+  logger.info('正在读取配置文件')
   fs.readFileSync('./config.yaml')
   // 有配置文件，读取内容
   if (!getConfigFn()) {
