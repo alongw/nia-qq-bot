@@ -1,0 +1,10 @@
+# 机器人基本信息配置
+bot:
+  # 机器人QQ号
+  qq: 2540936290
+  # Mirai-api-http 地址
+  host: 10.0.0.200
+  # Mirai-api-http 端口
+  port: 10088
+  # Mirai-api-http authKey
+  key: 1145141919810
