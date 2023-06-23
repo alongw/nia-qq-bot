@@ -5,6 +5,6 @@ bot:
   # Mirai-api-http 地址
   host: 10.0.0.200
   # Mirai-api-http 端口
-  port: 10088
+  port: 26668
   # Mirai-api-http authKey
   key: 1145141919810
