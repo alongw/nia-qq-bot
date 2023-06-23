@@ -3,7 +3,7 @@ import logger from './log'
 import config from './config'
 
 logger.info('正在连接Mirai')
-const { open, close, error, onMessage } = CreateMiraiApi(
+const { open, close, error, onMessage, sendFriendMessage } = CreateMiraiApi(
   config.bot.host,
   config.bot.port,
   config.bot.key,
@@ -22,4 +22,4 @@ error(() => {
   logger.error('Mirai连接失败')
 })
 
-export { onMessage }
+export { onMessage, sendFriendMessage }

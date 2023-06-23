@@ -8,3 +8,33 @@ bot:
   port: 26668
   # Mirai-api-http authKey
   key: 1145141919810
+
+# 数据库配置
+mysql:
+  # 数据库地址
+  host: 127.0.0.1
+  # 数据库端口
+  port: 3306
+  # 数据库用户名
+  user: root
+  # 数据库密码
+  password: root
+  # 数据库名
+  database: nia
+
+# 插件配置
+plugins:
+ - survival_test
+
+# 插件详细配置
+
+# survival_test机器人存活状态测试
+# 向机器人发送指定命令，检测是否存活
+survival_test:
+  # 命令发送人QQ 可以是自己
+  commandSender: 
+  - 1287756886
+  # 触发词
+  command: /ping
+  # 响应词
+  response: pang!
