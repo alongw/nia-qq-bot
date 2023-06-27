@@ -7,6 +7,6 @@ logger.info(`nia-bot运行在QQ:${config.bot.qq}上`)
 
 config.plugins.forEach((e) => {
   const plugins = require(`./plugins/${e}`)
-  logger.info(`正在尝试加载插件：${plugins.Name}(${e})`)
+  logger.info(`正在尝试加载插件：${plugins.Name || '未知插件'}(${e})`)
   plugins.Main && plugins.Main()
 })
