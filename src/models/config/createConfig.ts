@@ -6,7 +6,7 @@ const createConfig = () => {
   try {
     logger.info('正在创建配置文件...')
     const defaultConfigData = fs.readFileSync(
-      './default_flie/default_config.yaml',
+      './default_file/default_config.yaml',
       'utf-8'
     )
     fs.writeFileSync('./config.yaml', defaultConfigData)
