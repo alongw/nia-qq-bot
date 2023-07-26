@@ -26,6 +26,8 @@ mysql:
 plugins:
  - survival_test
  - message_forward
+ - mcsmanager
+ - operational_irregularities
 
 # 插件详细配置
 
@@ -41,8 +43,31 @@ survival_test:
   response: pang!
 
 # message_forward机器人消息转发
-# 将机器人接收到的私聊信息转发给指定人
+# 将机器人接收到的私聊信息转发给指定人（一定不要写机器人自己！！！！！）
 message_forward:
   # 接收消息的人（系统不会转发接收人列表中的消息）
   addressee: 
   - 1287756886
+
+# 将 Mcsmanager 面板对接 QQ 群
+# 让 QQ 群中的成员可以管理 Mcsmanager 中的实例
+mcsmanager:
+  # 实例列表
+  examples:
+    - name: test1
+      gid: b7628ebd17b845f4acd385a9e8cfaede
+      uid: 90d1f6d3dd5b47db8b1d221eccd0a86c
+      mcsm_url: http://10.0.0.200:23333
+      mcsm_key: 233333
+      qq_group: 
+        - 856942056
+
+# 娱乐向插件 operational_irregularities
+# 用于检测群友业务违规然后反馈 这个模块写死了，需要直接修改源码
+operational_irregularities:
+  # 监听 QQ 群
+  group: 
+    - 856942056
+  # 接收通知的人
+  addressee:
+    - 1287756886

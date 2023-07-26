@@ -15,6 +15,10 @@ interface configType {
   message_forward: {
     addressee: number[]
   }
+  operational_irregularities: {
+    group: number[]
+    addressee: number[]
+  }
 }
 
 export default configType
