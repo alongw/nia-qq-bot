@@ -12,6 +12,9 @@ interface configType {
     command: string
     response: string
   }
+  message_forward: {
+    addressee: number[]
+  }
 }
 
 export default configType

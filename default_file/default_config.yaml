@@ -25,6 +25,7 @@ mysql:
 # 插件配置
 plugins:
  - survival_test
+ - message_forward
 
 # 插件详细配置
 
@@ -38,3 +39,10 @@ survival_test:
   command: /ping
   # 响应词
   response: pang!
+
+# message_forward机器人消息转发
+# 将机器人接收到的私聊信息转发给指定人
+message_forward:
+  # 接收消息的人（系统不会转发接收人列表中的消息）
+  addressee: 
+  - 1287756886
