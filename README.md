@@ -48,7 +48,7 @@ message_forward:
   - 1287756886
 ```
 
-警告：不要讲机器人自己设置为接收人
+警告：不要将机器人自己设置为接收人
 
 ### Mcsmanager面板对接（mcsmanager）
 
