@@ -65,6 +65,8 @@ message_forward:
 配置文件
 
 ```yaml
+# 娱乐向插件 operational_irregularities
+# 用于检测群友业务违规然后反馈 这个模块写死了，需要直接修改源码
 operational_irregularities:
   # 监听 QQ 群
   group: 
@@ -72,5 +74,9 @@ operational_irregularities:
   # 接收通知的人
   addressee:
     - 1287756886
+  # 业务违规匹配关键词（正则）
+  keywords:
+    - 自动发送，不要回答
+    - 不是冒泡
 ```
 
