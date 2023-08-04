@@ -18,14 +18,21 @@ export const Main = () => {
     )
       return
     // 判断是否为业务违规消息
-    const regex = /自动发送，不要回答/
     // 需要是文字消息
     if (data.data.messageChain[1].type !== 'Plain') return
+
     // 判断是否包含关键字
-    if (!regex.test(data.data.messageChain[1].text)) return
+    if (
+      !new RegExp(config.operational_irregularities.keywords.join('|'), 'i').test(
+        data.data.messageChain[1].text
+      )
+    )
+      return
+
     // 获取消息ID
     if (data.data.messageChain[0].type !== 'Source') return
     const msgID = data.data.messageChain[0].id
+
     // 发送消息
     sendGroupMessage(data.data.sender.group.id, [{ type: 'Plain', text: '业务违规！\n' }])
     ws.send(

@@ -71,3 +71,7 @@ operational_irregularities:
   # 接收通知的人
   addressee:
     - 1287756886
+  # 业务违规匹配关键词（正则）
+  keywords:
+    - /自动发送，不要回答/
+    - /不是冒泡/
