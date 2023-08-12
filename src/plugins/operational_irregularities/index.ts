@@ -34,7 +34,7 @@ export const Main = () => {
     const msgID = data.data.messageChain[0].id
 
     // 发送消息
-    sendGroupMessage(data.data.sender.group.id, [{ type: 'Plain', text: '业务违规！\n' }])
+    sendGroupMessage(data.data.sender.group.id, [{ type: 'Plain', text: '业务违规！' }])
     ws.send(
       JSON.stringify({
         command: 'sendGroupMessage',
