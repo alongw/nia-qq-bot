@@ -60,8 +60,6 @@ message_forward:
 
 娱乐向插件，用于通过关键字正则匹配检测群友业务违规然后反馈
 
-这个模块写死了，需要直接修改源码
-
 配置文件
 
 ```yaml
@@ -78,5 +76,10 @@ operational_irregularities:
   keywords:
     - 自动发送，不要回答
     - 不是冒泡
+  # 是否针对某些人开启
+  only_check_sender: false
+  # 针对者 QQ 号
+  check_sender:
+    - 1287756886
 ```
 
