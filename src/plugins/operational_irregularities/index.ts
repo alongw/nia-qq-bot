@@ -17,6 +17,14 @@ export const Main = () => {
       !config.operational_irregularities.group.includes(data.data.sender.group.id)
     )
       return
+
+    // 得是配置文件指定的人
+    if (
+      config.operational_irregularities.only_check_sender &&
+      !config.operational_irregularities.check_sender.includes(data.data.sender.id)
+    )
+      return
+
     // 判断是否为业务违规消息
     // 需要是文字消息
     if (data.data.messageChain[1].type !== 'Plain') return

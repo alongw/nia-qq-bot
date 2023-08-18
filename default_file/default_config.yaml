@@ -55,10 +55,10 @@ mcsmanager:
   # 实例列表
   examples:
     - name: test1
-      gid: b7628ebd17b845f4acd385a9e8cfaede
-      uid: 90d1f6d3dd5b47db8b1d221eccd0a86c
+      gid: b7628e3d17b145f4acd385a4e8cfa5de
+      uid: 10d133d3325b475b8b8d221eccd0786c
       mcsm_url: http://10.0.0.200:23333
-      mcsm_key: 233333
+      mcsm_key: admin123
       qq_group: 
         - 856942056
 
@@ -73,5 +73,10 @@ operational_irregularities:
     - 1287756886
   # 业务违规匹配关键词（正则）
   keywords:
-    - /自动发送，不要回答/
-    - /不是冒泡/
+    - 自动发送，不要回答
+    - 不是冒泡
+  # 是否针对某些人开启
+  only_check_sender: false
+  # 针对者 QQ 号
+  check_sender:
+    - 1287756886

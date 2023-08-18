@@ -29,6 +29,8 @@ interface configType {
     group: number[]
     addressee: number[]
     keywords: string[]
+    only_check_sender: boolean
+    check_sender: number[]
   }
 }
 
